@@ -1,0 +1,23 @@
+<%- include('./partials/header.ejs')%>
+        <main>
+            <div class="connectionLists">
+               <% if(leagueNames.length && allMatches.length){%>
+                <ul>
+                    <%for(let i =0; i< leagueNames.length;i++){%>
+                        <h2><%=leagueNames[i]%></h2>
+                    <ul>
+                        <%for(let j =0; j<allMatches.length; j++){ %>
+                            <%if(allMatches[j].leagueTitle == leagueNames[i]){%>
+                            <li><a href="/connection/match/<%=allMatches[j].matchid%>"><%=allMatches[j].title%></a></li>
+                        <%}%>
+                        <%}%>
+                    </ul>
+                    <%}%>
+                </ul>
+                <%}else{%>
+                    <p>No records to display</p>
+                <%}%>
+                
+            </div>
+        </main>
+<%- include('./partials/footer.ejs')%>

@@ -1,0 +1,42 @@
+<%- include('./partials/header.ejs')%>
+            <hr>
+            <form id="simple-forms" method="POST" action="/connection/match/<%=matchObj.matchid%>?_method=PUT">
+                <div id = "labels">
+                    <label>League Name</label>
+                    <input type="text" id="leagueName-input" name= "leagueTitle" value="<%= matchObj.leagueTitle %>">
+                </div>
+                <div>
+                    <label>Match Title</label>
+                    <input type="text" id="title-input" name= "title" value="<%= matchObj.title %>">
+                </div>
+                <div id="inputs">
+                    <label>Host</label>
+                    <input type="text" id="host-input"  name= "host" value="<%= matchObj.host %>">
+                </div>
+                <div>
+                    <label>Details</label>
+                    <textarea rows="10" cols="50" name= "details" ><%= matchObj.details %></textarea>
+                </div>
+                <div>
+                    <label>Where</label>
+                    <input type="text" id="where-input" name= "where" value="<%= matchObj.where %>">
+                </div>
+                <div>
+                    <label>When</label>
+                    <input type="date" data-date-inline-picker="true" id="when-input" value="<%= matchObj.when %>" name= "when" data-polyfill="all">
+                </div>
+                <div>
+                    <label>Start</label>
+                    <input type="text" name= "starttime" id="start-input" value="<%= matchObj.starttime %>">
+                </div>
+                <div>
+                    <label>End</label>
+                    <input type="text" name= "endtime" id="end-input" value="<%= matchObj.endtime %>">
+                </div>
+                <div>
+                    <label>Image URL</label>
+                    <input type="url" id="image-url-input" name= "imageurl" value="<%= matchObj.imageurl %>">
+                </div>
+                <button type="submit" id="create--match-button">Update</button>
+            </form>
+<%- include('./partials/footer.ejs')%>

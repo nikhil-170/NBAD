@@ -1,0 +1,24 @@
+<%- include('./partials/header.ejs')%>
+  <div class="connection-detail-class">
+      <div>
+        <h2><%= matchObj.leagueTitle %></h2>
+        <form action="../project1/connections.html">
+            <button type="submit" formmethod="GET" formaction="/connection/match/<%= matchObj.matchid%>/edit">Update</button>
+            <button type="submit" formmethod="POST" formaction="/connection/match/<%=matchObj.matchid%>?_method=DELETE">Delete</button>
+        </form>
+      </div>
+    <div class="row1">
+      <div class="col1">
+          <img id="matchlogo" src="<%=matchObj.imageurl%>" alt="">
+      </div>
+      <div class="col2">
+        Hosted by <%=matchObj.host%> <br>Day: <%= matchObj.when%> <br>Time: <%=matchObj.starttime%> - <%=matchObj.endtime%> <br>
+         Location: <%=matchObj.where%>
+      </div>
+    </div>
+        <div class="details-class">
+            <h3>Details</h3>
+            <p><%=matchObj.details%></p>
+        </div>
+  </div>
+<%- include('./partials/footer.ejs')%>
